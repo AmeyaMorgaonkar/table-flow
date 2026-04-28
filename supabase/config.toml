@@ -1,0 +1,14 @@
+# Supabase CLI config — https://supabase.com/docs/guides/cli/config
+
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 17
+
+[studio]
+enabled = true
+port = 54323
+
+[api]
+enabled = true
+port = 54321
