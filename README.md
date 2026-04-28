@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# TableFlow
 
-## Getting Started
+TableFlow is a white-label QR-based restaurant ordering SaaS for dine-in service.
 
-First, run the development server:
+Each restaurant gets its own branded experience, accessed through a unique slug and table route. Customers scan a QR code, browse the menu without signing in, enter a waiter-issued OTP when seated, and then place orders, call a waiter, and view the bill inside the same session.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## What the product does
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+- Delivers a restaurant-specific ordering experience instead of a shared public brand
+- Keeps customer access anonymous while still controlling order placement with session OTPs
+- Lets waiters open table sessions, generate OTPs, and monitor active orders
+- Gives restaurant admins control over menus, tables, staff, and branding
+- Enforces tenant isolation so every restaurant only sees its own data
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Core flows
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Customer scans a QR code and opens the menu
+2. Waiter seats the guest and shares a 4-digit OTP
+3. Customer enters the OTP to unlock ordering
+4. Customer places orders, calls staff, and checks the bill
+5. Waiter tracks sessions and closes tables when done
 
-## Learn More
+## White-label model
 
-To learn more about Next.js, take a look at the following resources:
+- Every restaurant has a unique slug
+- Routes are scoped per restaurant and per table
+- Branding such as name, logo, and colors is loaded per tenant
+- All data is scoped by restaurant ID
+- Row-level security is used as the final isolation layer
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Product scope
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Included in the MVP
 
-## Deploy on Vercel
+- QR-based dine-in ordering
+- OTP-gated table sessions
+- Menu browsing and ordering
+- Waiter session management
+- Restaurant admin controls for branding, tables, and menus
+- Bill summary
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Not included in the MVP
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Landing page or marketing site
+- Online payments through the bill page
+- SMS or email notifications
+- Customer accounts
+
+## Stack
+
+- Next.js
+- TypeScript
+- Supabase
+- Tailwind CSS
+- Vercel
