@@ -26,6 +26,12 @@ function isPublicRoute(pathname: string): boolean {
   // API auth routes are public
   if (pathname.startsWith("/api/auth/")) return true;
 
+  // Session join and status routes are public (customer-facing, no auth)
+  if (pathname === "/api/session/join" || pathname === "/api/session/status") return true;
+
+  // Order and waiter-request routes use session cookies, not admin auth
+  if (pathname.startsWith("/api/orders") || pathname === "/api/waiter-request") return true;
+
   // Non-admin routes are public (customer-facing /[slug]/*)
   if (!pathname.startsWith("/admin")) return true;
 

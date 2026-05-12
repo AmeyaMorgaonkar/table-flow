@@ -1,0 +1,232 @@
+/* ============================================================
+   TableFlow — Kitchen Dashboard (Light Theme)
+   ============================================================ */
+
+/* ── Waiter Request Alerts ── */
+
+.waiter-alerts {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.waiter-alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 10px;
+  animation: alert-pulse 2s infinite;
+}
+
+@keyframes alert-pulse {
+  0%, 100% { border-color: #FECACA; }
+  50% { border-color: #FCA5A5; }
+}
+
+.waiter-alert-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: #DC2626;
+}
+
+.waiter-alert-info > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.waiter-alert-label {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #991B1B;
+}
+
+.waiter-alert-time {
+  font-size: 0.75rem;
+  color: #A1A1AA;
+}
+
+.waiter-alert-btn {
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: #DC2626;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.waiter-alert-btn:hover {
+  background: #B91C1C;
+}
+
+/* ── Kitchen Grid ── */
+
+.kitchen-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 0.75rem;
+}
+
+/* ── Kitchen Card ── */
+
+.kitchen-card {
+  background: #FFFFFF;
+  border: 1px solid #E8E8E4;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.kitchen-card:hover {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.04), 0 2px 4px rgba(0,0,0,0.03);
+}
+
+.kitchen-card--pending {
+  border-left: 3px solid #D97706;
+}
+
+.kitchen-card--preparing {
+  border-left: 3px solid #2563EB;
+}
+
+.kitchen-card--ready {
+  border-left: 3px solid #16A34A;
+}
+
+.kitchen-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #F4F4F5;
+}
+
+.kitchen-card-table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+.kitchen-card-table-label {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+.kitchen-card-time {
+  font-size: 0.75rem;
+  color: #A1A1AA;
+}
+
+.kitchen-status-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+  border: 1px solid;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.kitchen-card-items {
+  list-style: none;
+  padding: 0.75rem 1.25rem;
+  margin: 0;
+}
+
+.kitchen-card-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.375rem 0;
+}
+
+.kitchen-item-qty {
+  font-size: 0.8125rem;
+  color: #71717A;
+  font-weight: 700;
+  min-width: 24px;
+}
+
+.kitchen-item-name {
+  font-size: 0.875rem;
+  color: #1A1A1A;
+}
+
+.kitchen-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1.25rem;
+  border-top: 1px solid #F4F4F5;
+  background: #FAFAF8;
+}
+
+.kitchen-card-total {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #71717A;
+}
+
+.kitchen-action-btn {
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.kitchen-action-btn:hover:not(:disabled) {
+  opacity: 0.9;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.kitchen-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ── Empty State ── */
+
+.kitchen-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 4rem 1rem;
+  color: #A1A1AA;
+}
+
+.kitchen-empty svg {
+  opacity: 0.3;
+  margin-bottom: 1rem;
+  color: #71717A;
+}
+
+.kitchen-empty h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #71717A;
+  margin: 0 0 0.375rem;
+}
+
+.kitchen-empty p {
+  font-size: 0.875rem;
+  margin: 0;
+}

@@ -1,0 +1,524 @@
+/* ============================================================
+   TableFlow — Customer Menu View (Light Theme)
+   Clean · Spacious · Luxury feel
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.menu-page {
+  min-height: 100vh;
+  background: #FAFAF8;
+  color: #1A1A1A;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  padding-bottom: 7rem;
+}
+
+/* ── Header ── */
+
+.menu-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #E8E8E4;
+}
+
+.menu-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.menu-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.menu-logo {
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #E8E8E4;
+}
+
+.menu-restaurant-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: 0;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+.menu-table-label {
+  font-size: 0.6875rem;
+  color: #A1A1AA;
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 500;
+}
+
+/* ── Header Right ── */
+
+.menu-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+}
+
+/* ── Orders Button ── */
+
+.menu-orders-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.4375rem 0.625rem;
+  border-radius: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #71717A;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E4;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.menu-orders-btn:hover {
+  color: #1A1A1A;
+  border-color: #D4D4D4;
+}
+
+/* ── Cart Button ── */
+
+.menu-cart-btn {
+  position: relative;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E4;
+  border-radius: 8px;
+  padding: 0.5rem;
+  color: #1A1A1A;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.menu-cart-btn:hover {
+  border-color: #D4D4D4;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.menu-cart-btn svg {
+  width: 20px;
+  height: 20px;
+}
+
+.menu-cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #1A1A1A;
+  color: #FFFFFF;
+  font-size: 0.625rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #FAFAF8;
+  animation: badge-pop 0.3s ease;
+}
+
+@keyframes badge-pop {
+  0% { transform: scale(0); }
+  60% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+/* ── Cart Total Bar ── */
+
+.menu-cart-bar {
+  position: fixed;
+  left: 50%;
+  bottom: 1rem;
+  transform: translateX(-50%);
+  width: min(800px, calc(100vw - 1.5rem));
+  z-index: 45;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1rem;
+  background: #1A1A1A;
+  border-radius: 14px;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.menu-cart-bar:hover {
+  background: #333333;
+}
+
+.menu-cart-bar-items {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.menu-cart-bar-total {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #FFFFFF;
+}
+
+/* ── Category Navigation ── */
+
+.menu-category-nav {
+  position: sticky;
+  top: 57px;
+  z-index: 40;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid #E8E8E4;
+}
+
+.menu-category-tabs {
+  display: flex;
+  gap: 0.25rem;
+  padding: 0.5rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.menu-category-tabs::-webkit-scrollbar {
+  display: none;
+}
+
+.menu-category-tab {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.4375rem 0.875rem;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: #71717A;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+
+.menu-category-tab:hover {
+  color: #1A1A1A;
+  background: #F4F4F5;
+}
+
+.menu-category-tab--active {
+  color: #1A1A1A;
+  background: #FFFFFF;
+  border-color: #E8E8E4;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+  font-weight: 600;
+}
+
+.menu-category-count {
+  font-size: 0.6875rem;
+  padding: 0.0625rem 0.375rem;
+  border-radius: 4px;
+  background: #F4F4F5;
+  color: #A1A1AA;
+  font-weight: 500;
+}
+
+.menu-category-tab--active .menu-category-count {
+  background: #E8E8E4;
+  color: #71717A;
+}
+
+/* ── Content ── */
+
+.menu-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1.5rem 1rem;
+}
+
+.menu-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 1rem;
+  text-align: center;
+  color: #A1A1AA;
+}
+
+.menu-empty svg {
+  margin-bottom: 1rem;
+  opacity: 0.4;
+  color: #71717A;
+}
+
+.menu-empty h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: #71717A;
+  margin: 0 0 0.375rem;
+}
+
+.menu-empty p {
+  font-size: 0.875rem;
+  margin: 0;
+}
+
+/* ── Section ── */
+
+.menu-section {
+  margin-bottom: 2.5rem;
+  scroll-margin-top: 120px;
+}
+
+.menu-section-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #A1A1AA;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* ── Grid ── */
+
+.menu-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+/* ── Card ── */
+
+.menu-card {
+  background: #FFFFFF;
+  border: 1px solid #E8E8E4;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: row;
+}
+
+.menu-card:hover {
+  border-color: #D4D4D4;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.menu-card--unavailable {
+  opacity: 0.45;
+}
+
+.menu-card-image {
+  position: relative;
+  width: 100px;
+  min-height: 100px;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.menu-card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.menu-card-sold-out {
+  position: absolute;
+  top: 0.375rem;
+  left: 0.375rem;
+  background: #DC2626;
+  color: #FFFFFF;
+  font-size: 0.625rem;
+  font-weight: 600;
+  padding: 0.125rem 0.375rem;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.menu-card-body {
+  padding: 0.875rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.menu-card-info {
+  flex: 1;
+}
+
+.menu-card-name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #1A1A1A;
+  margin: 0 0 0.125rem;
+  letter-spacing: -0.01em;
+}
+
+.menu-card-desc {
+  font-size: 0.75rem;
+  color: #A1A1AA;
+  margin: 0;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.menu-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-card-price {
+  font-size: 0.9375rem;
+  font-weight: 700;
+  color: #1A1A1A;
+}
+
+/* ── Add Button ── */
+
+.menu-add-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #1A1A1A;
+  background: #F4F4F5;
+  border: 1px solid #E8E8E4;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.menu-add-btn:hover {
+  background: #E8E8E4;
+}
+
+.menu-add-btn:active {
+  transform: scale(0.97);
+}
+
+/* ── OTP FAB ── */
+
+.menu-otp-fab {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: #1A1A1A;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.menu-otp-fab:hover {
+  background: #333333;
+}
+
+/* ── Call Waiter FAB ── */
+
+.menu-waiter-fab {
+  position: fixed;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.5rem 0.875rem;
+  border-radius: 8px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  background: #1A1A1A;
+  border: none;
+  cursor: pointer;
+  transition: all 0.15s;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.menu-waiter-fab:hover:not(:disabled) {
+  background: #333333;
+}
+
+.menu-waiter-fab:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.menu-waiter-fab--called {
+  background: #16A34A;
+}
+
+.menu-waiter-fab--above-cart {
+  bottom: 4.75rem;
+}
+
+/* ── Mobile ── */
+
+@media (max-width: 640px) {
+  .menu-card {
+    flex-direction: column;
+  }
+
+  .menu-card-image {
+    width: 100%;
+    height: 140px;
+  }
+
+  .menu-header-inner {
+    padding: 0.625rem 0.75rem;
+  }
+
+  .menu-content {
+    padding: 1rem 0.75rem;
+  }
+
+  .menu-cart-bar {
+    bottom: 0.75rem;
+    width: calc(100vw - 1rem);
+  }
+
+  .menu-waiter-fab--above-cart {
+    bottom: 4.25rem;
+  }
+}

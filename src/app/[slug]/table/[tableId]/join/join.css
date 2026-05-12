@@ -1,0 +1,234 @@
+/* ============================================================
+   TableFlow — Customer OTP Join Page Styles
+   Clean, mobile-first design
+   ============================================================ */
+
+.join-container {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(160deg, #0c0c1d 0%, #1a1a3e 40%, #0f172a 100%);
+}
+
+.join-card {
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  padding: 2.5rem 2rem;
+}
+
+/* Header */
+.join-header {
+  margin-bottom: 2.5rem;
+}
+
+.join-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem;
+  color: #818cf8;
+  opacity: 0.8;
+}
+
+.join-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.join-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin: 0 0 0.5rem;
+}
+
+.join-subtitle {
+  font-size: 0.9375rem;
+  color: #94a3b8;
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* OTP Inputs */
+.otp-inputs {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.otp-input {
+  width: 64px;
+  height: 72px;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  background: rgba(255, 255, 255, 0.06);
+  border: 2px solid rgba(255, 255, 255, 0.12);
+  border-radius: 14px;
+  outline: none;
+  transition: all 0.2s ease;
+  caret-color: #6366f1;
+  font-variant-numeric: tabular-nums;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.otp-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.otp-input--error {
+  border-color: rgba(239, 68, 68, 0.5);
+  animation: shake 0.3s ease-in-out;
+}
+
+.otp-input:disabled {
+  opacity: 0.5;
+}
+
+/* Remove number input spinners */
+.otp-input::-webkit-outer-spin-button,
+.otp-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* Error */
+.join-error {
+  padding: 0.75rem 1rem;
+  background: rgba(239, 68, 68, 0.08);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 10px;
+  color: #fca5a5;
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Loading */
+.join-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  color: #94a3b8;
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.join-spinner {
+  width: 18px;
+  height: 18px;
+  border: 2px solid rgba(99, 102, 241, 0.2);
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Submit Button */
+.join-button {
+  width: 100%;
+  padding: 0.9375rem;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.join-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 25px rgba(99, 102, 241, 0.35);
+}
+
+.join-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Locked State */
+.join-locked {
+  padding: 2rem 0;
+}
+
+.locked-icon {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1.25rem;
+  color: #ef4444;
+  opacity: 0.7;
+}
+
+.locked-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.locked-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #f87171;
+  margin: 0 0 0.75rem;
+}
+
+.locked-text {
+  font-size: 0.9375rem;
+  color: #94a3b8;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* Footer */
+.join-footer {
+  margin-top: 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.join-browse-link {
+  font-size: 0.8125rem;
+  color: #818cf8;
+  text-decoration: none;
+  transition: color 0.15s;
+}
+
+.join-browse-link:hover {
+  color: #a5b4fc;
+}
+
+/* Mobile responsive */
+@media (max-width: 380px) {
+  .otp-input {
+    width: 56px;
+    height: 64px;
+    font-size: 1.75rem;
+  }
+
+  .otp-inputs {
+    gap: 0.5rem;
+  }
+}

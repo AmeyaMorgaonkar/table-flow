@@ -1,0 +1,494 @@
+/* ============================================================
+   TableFlow — Tables Management (Light Theme)
+   ============================================================ */
+
+/* Loading */
+.tables-loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  min-height: 50vh;
+  color: #A1A1AA;
+}
+
+.tables-spinner {
+  width: 24px;
+  height: 24px;
+  border: 2px solid #E8E8E4;
+  border-top-color: #1A1A1A;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Page Header */
+.tables-header {
+  margin-bottom: 2rem;
+}
+
+.tables-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.tables-subtitle {
+  font-size: 0.875rem;
+  color: #A1A1AA;
+  margin: 0.25rem 0 0;
+}
+
+/* Error */
+.tables-error {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.75rem 1rem;
+  background: #FEF2F2;
+  border: 1px solid #FECACA;
+  border-radius: 8px;
+  color: #DC2626;
+  font-size: 0.8125rem;
+  margin-bottom: 1.5rem;
+}
+
+.tables-error-dismiss {
+  background: none;
+  border: none;
+  color: #DC2626;
+  cursor: pointer;
+  font-size: 0.875rem;
+  padding: 0 0.25rem;
+}
+
+/* Table Grid */
+.tables-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+.tables-section {
+  margin-top: 1.25rem;
+}
+.tables-section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+.tables-section-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+.tables-section-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: #F4F4F5;
+  color: #71717A;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.tables-group {
+  margin-top: 1rem;
+}
+
+.tables-group-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.625rem;
+}
+
+.tables-group-title {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #52525B;
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+.tables-group-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: #F4F4F5;
+  color: #71717A;
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.table-card {
+  width: 100%;
+  padding: 1rem 1.1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+  border: 1px solid #E8E8E4;
+  background: #FFFFFF;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+}
+
+.table-card:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+  transform: translateY(-1px);
+}
+
+.table-card--full {
+  border-radius: 12px;
+}
+
+.table-card--active {
+  border-color: #BBF7D0;
+  background: #F0FDF4;
+}
+
+.table-card--active:hover {
+  border-color: #86EFAC;
+}
+
+.table-card--idle {
+  background: #FFFFFF;
+}
+
+.table-card--idle:hover {
+  border-color: #D4D4D4;
+}
+
+.table-card-status {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-bottom: 0.5rem;
+}
+
+.table-card-main {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+
+.table-card-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.table-card-right {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  text-align: right;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+}
+
+.status-dot--active {
+  background: #16A34A;
+}
+
+.status-dot--idle {
+  background: #D4D4D8;
+}
+
+.status-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #A1A1AA;
+}
+
+.table-card-label {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.table-card-meta {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.table-card-meta-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  color: #A1A1AA;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.table-card-time {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+/* Empty */
+.tables-empty {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: #71717A;
+}
+
+.tables-empty-hint {
+  font-size: 0.8125rem;
+  color: #A1A1AA;
+  margin-top: 0.25rem;
+}
+
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.15);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 1rem;
+  animation: fadeIn 0.15s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-card {
+  width: 100%;
+  max-width: 400px;
+  background: #FFFFFF;
+  border: 1px solid #E8E8E4;
+  border-radius: 14px;
+  padding: 2rem;
+  position: relative;
+  animation: slideUp 0.2s ease;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+}
+
+@keyframes slideUp {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.875rem;
+  right: 0.875rem;
+  background: transparent;
+  border: none;
+  color: #A1A1AA;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s;
+}
+
+.modal-close:hover {
+  background: #F4F4F5;
+  color: #1A1A1A;
+}
+
+.modal-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #1A1A1A;
+  margin: 0 0 1.5rem;
+  letter-spacing: -0.02em;
+}
+
+/* OTP Display */
+.otp-display {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.otp-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #A1A1AA;
+  margin: 0 0 0.75rem;
+}
+
+.otp-code {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.otp-digit {
+  width: 52px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #1A1A1A;
+  background: #F4F4F5;
+  border: 1.5px solid #E8E8E4;
+  border-radius: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.otp-hint {
+  font-size: 0.8125rem;
+  color: #A1A1AA;
+  margin: 0.75rem 0 0;
+}
+
+/* Session Info */
+.modal-session-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background: #FAFAF8;
+  border-radius: 8px;
+  border: 1px solid #F4F4F5;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.info-label {
+  font-size: 0.8125rem;
+  color: #71717A;
+}
+
+.info-value {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1A1A1A;
+}
+
+.info-value--active {
+  color: #16A34A;
+}
+
+/* Buttons */
+.btn-open-session {
+  width: 100%;
+  padding: 0.6875rem;
+  background: #1A1A1A;
+  color: #FFFFFF;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-open-session:hover:not(:disabled) {
+  background: #333333;
+}
+
+.btn-open-session:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-close-session {
+  width: 100%;
+  padding: 0.6875rem;
+  background: #FEF2F2;
+  color: #DC2626;
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-family: inherit;
+  border: 1px solid #FECACA;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.btn-close-session:hover:not(:disabled) {
+  background: #FEE2E2;
+}
+
+.btn-close-session:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Idle State */
+.modal-idle {
+  text-align: center;
+}
+.idle-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 1rem;
+  color: #A1A1AA;
+}
+
+.idle-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.idle-text {
+  color: #71717A;
+  font-size: 0.875rem;
+  margin: 0 0 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .tables-grid {
+    gap: 0.625rem;
+  }
+
+  .table-card {
+    padding: 0.95rem 1rem;
+  }
+
+  .table-card-head {
+    gap: 0.5rem;
+  }
+
+  .table-card-open-btn {
+    padding: 0.35rem 0.72rem;
+  }
+}
